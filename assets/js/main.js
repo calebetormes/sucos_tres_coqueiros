@@ -18,7 +18,7 @@ const CONFIG = {
   tamanhos: [
     { size: '5 Litros', desc: 'Para toda a família', scale: 1.6 },
     { size: '2 Litros', desc: 'O favorito do fim de semana', scale: 1.3 },
-    { size: '900 ml', desc: 'Perfeito para o almoço', scale: 1.0 },
+    { size: '1 Litro', desc: 'Perfeito para o almoço', scale: 1.0 },
     { size: '330 ml', desc: 'Refresco prático', scale: 0.8 }
   ]
 };
@@ -48,12 +48,12 @@ document.addEventListener('DOMContentLoaded', () => {
   // Promessa 3: Vídeo principal carregado o suficiente para tocar sem travar
   const videoLoad = new Promise(resolve => {
     // readyState >= 4 significa HAVE_ENOUGH_DATA (pode tocar até o fim sem parar)
-    if (!heroVideo1 || heroVideo1.readyState >= 4) { 
+    if (!heroVideo1 || heroVideo1.readyState >= 4) {
       resolve();
     } else {
       heroVideo1.addEventListener('canplaythrough', resolve);
       heroVideo1.addEventListener('error', resolve); // Continua se der erro
-      
+
       // Timeout de segurança (15s) para liberar o site caso a internet esteja excessivamente lenta
       setTimeout(resolve, 15000);
     }
@@ -63,10 +63,10 @@ document.addEventListener('DOMContentLoaded', () => {
   Promise.all([minTime, pageLoad, videoLoad]).then(() => {
     loadingScreen?.classList.add('is-hidden');
     document.body.style.overflow = '';
-    
+
     // Garante que o vídeo inicie agora que a tela está liberada
     if (heroVideo1) {
-      heroVideo1.play().catch(() => {});
+      heroVideo1.play().catch(() => { });
     }
   });
 
@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
         switched = true;
         v1.classList.remove('is-visible');
         v2.classList.add('is-visible');
-        v2.play().catch(() => {});
+        v2.play().catch(() => { });
         setTimeout(() => transition.classList.remove('is-active'), 500);
       }, 1000);
     });
