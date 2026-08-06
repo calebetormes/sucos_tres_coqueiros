@@ -18,7 +18,7 @@ const CONFIG = {
   tamanhos: [
     { size: '5 Litros', desc: 'Para toda a família', scale: 1.6 },
     { size: '2 Litros', desc: 'O favorito do fim de semana', scale: 1.3 },
-    { size: '1 Litro', desc: 'Perfeito para o almoço', scale: 1.0 },
+    { size: '1 Litros', desc: 'Perfeito para o almoço', scale: 1.0 },
     { size: '330 ml', desc: 'Refresco prático', scale: 0.8 }
   ]
 };
