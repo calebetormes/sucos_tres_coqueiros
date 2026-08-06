@@ -1123,8 +1123,9 @@ p {
   width: 50px;
   height: 50px;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 }
 
 .bottle-silhouette {
@@ -1134,7 +1135,7 @@ p {
   border: 1px solid var(--text-highlight);
   border-radius: 3px 3px 2px 2px;
   position: relative;
-  transform-origin: bottom center;
+  transform-origin: center;
   transition: transform 0.4s ease;
 }
 
